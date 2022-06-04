@@ -24,7 +24,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\JOSE\Desktop\tutorial\refugio\templates\base" />
+      <recent name="C:\Users\JOSE\Desktop\tutorial\test\templates\base" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -41,7 +41,7 @@
   </component>
   <component name="RunManager">
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="refugio" />
+      <module name="test" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
