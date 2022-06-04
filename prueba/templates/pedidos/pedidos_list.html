@@ -31,9 +31,9 @@
             <td>{{ recetas.valor }}</td>
             <td>{{ recetas.fechados }}</td>
             <td>
-                <a class="btn btn-primary" href="{% url 'recetas_editar' recetas.id %}">Editar</a>
-                <a class="btn btn-danger" href="{% url 'recetas_eliminar' recetas.id %}">Eliminar</a>
-                <a class="btn btn-success" target="_blank" href="{% url 'recetas_eliminar' recetas.id %}">Ver</a>
+                <a class="btn btn-primary" href="{% url 'pedidos_editar' recetas.id %}">Editar</a>
+                <a class="btn btn-danger" href="{% url 'pedidos_eliminar' recetas.id %}">Eliminar</a>
+                <a class="btn btn-success" target="_blank" href="{% url 'pedidos_eliminar' recetas.id %}">Ver</a>
 
             </td>
         </tr>

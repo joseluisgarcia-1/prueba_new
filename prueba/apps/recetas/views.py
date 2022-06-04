@@ -7,61 +7,61 @@ from django.urls import reverse_lazy
 
 
 def index(request):
-    return render(request, 'recetas/index.html')
+    return render(request, 'pedidos/index.html')
 
 
-def recetas_view(request):
+def pedidos_view(request):
     if request.method =='POST':
         form = PedidosForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('recetas_listar')
+        return redirect('pedidos_listar')
     else:
         form = PedidosForm()
-    return render(request, 'recetas/recetas_form.html', {'form':form})
+    return render(request, 'pedidos/pedidos_form.html', {'form':form})
 
-def recetas_list(request):
-    recetas = Pedidos.objects.all().order_by('id')
-    contexto = {'recetas':recetas}
-    return render(request, 'recetas/recetas_list.html', contexto)
+def pedidos_list(request):
+    pedidos = Pedidos.objects.all().order_by('id')
+    contexto = {'pedidos':pedidos}
+    return render(request, 'pedidos/pedidos_list.html', contexto)
 
-def recetas_edit(request, id_recetas):
-    recetas = Pedidos.objects.get(id=id_recetas)
+def pedidos_edit(request, id_pedidos):
+    pedidos = Pedidos.objects.get(id=id_pedidos)
     if request.method == 'GET':
-        form = PedidosForm(instance=recetas)
+        form = PedidosForm(instance=pedidos)
     else:
-        form = PedidosForm(request.POST, instance=recetas)
+        form = PedidosForm(request.POST, instance=pedidos)
         if form.is_valid():
             form.save()
-        return redirect('recetas_listar')
-    return render(request, 'recetas/recetas_form.html', {'form':form})
+        return redirect('pedidos_listar')
+    return render(request, 'pedidos/pedidos_form.html', {'form':form})
 
-def recetas_delete(request, id_recetas):
-    recetas = Pedidos.objects.get(id=id_recetas)
+def pedidos_delete(request, id_pedidos):
+    pedidos = Pedidos.objects.get(id=id_pedidos)
     if request.method =='POST':
-        recetas.delete()
-        return redirect('recetas_listar')
-    return render(request, 'recetas/recetas_delete.html', {'recetas':recetas})
+        pedidos.delete()
+        return redirect('pedidos_listar')
+    return render(request, 'pedidos/pedidos_delete.html', {'pedidos':pedidos})
 
-class RecetasList(ListView):
+class PedidosList(ListView):
     model = Pedidos
-    template_name = 'recetas/recetas_list.html'
+    template_name = 'pedidos/pedidos_list.html'
     paginate_by = 2
 
-class RecetasCreate(CreateView):
+class PedidosCreate(CreateView):
     model = Pedidos
     form_class = PedidosForm
-    template_name = 'recetas/recetas_form.html'
-    success_url = reverse_lazy('recetas_listar')
+    template_name = 'pedidos/pedidos_form.html'
+    success_url = reverse_lazy('pedidos_listar')
 
-class RecetasUpdate(UpdateView):
+class PedidosUpdate(UpdateView):
     model = Pedidos
     form_class = PedidosForm
-    template_name = 'recetas/recetas_form.html'
-    success_url = reverse_lazy('recetas_listar')
+    template_name = 'pedidos/pedidos_form.html'
+    success_url = reverse_lazy('pedidos_listar')
 
-class RecetasDelete(DeleteView):
+class PedidosDelete(DeleteView):
     model = Pedidos
-    template_name = 'recetas/recetas_delete.html'
-    success_url = reverse_lazy('recetas_listar')
+    template_name = 'pedidos/pedidos_delete.html'
+    success_url = reverse_lazy('pedidos_listar')
 
