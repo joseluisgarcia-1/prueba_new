@@ -10,11 +10,11 @@ def index_tipo(request):
     return HttpResponse("Soy la pagina principal de la app tipo")
 
 
-class RecetaList(ListView):
+class PedidoList(ListView):
     model = Pedido
     template_name = 'tipo/tipo_list.html'
 
-class RecetaCreate(CreateView):
+class PedidoCreate(CreateView):
     model = Pedido
     template_name = 'tipo/tipo_form.html'
     form_class = PedidoForm
@@ -22,7 +22,7 @@ class RecetaCreate(CreateView):
     success_url = reverse_lazy('tipo_listar')
 
     def get_context_data(self, **kwargs):
-        context = super(RecetaCreate, self).get_context_data(**kwargs)
+        context = super(PedidoCreate, self).get_context_data(**kwargs)
         if 'form' not in context:
             context['form'] = self.get_form_class(self.request.GET)
         if 'form2' not in context:
@@ -41,7 +41,7 @@ class RecetaCreate(CreateView):
         else:
             return self.render_to_response(self.get_context_data(form=form, form2=form2))
 
-class RecetaUpdate(UpdateView):
+class PedidoUpdate(UpdateView):
     model = Pedido
     second_model = Objetivos
     template_name = 'tipo/tipo_form.html'
@@ -50,7 +50,7 @@ class RecetaUpdate(UpdateView):
     success_url = reverse_lazy('tipo_listar')
 
     def get_context_data(self, **kwargs):
-        context = super(RecetaUpdate, self).get_context_data(**kwargs)
+        context = super(PedidoUpdate, self).get_context_data(**kwargs)
         pk = self.kwargs.get('pk', 0)
         plato = self.model.objects.get(id=pk)
         descripcion = self.second_model.objects.get(id=plato.descripcion_id)
@@ -75,7 +75,7 @@ class RecetaUpdate(UpdateView):
         else:
             return HttpResponseRedirect(self.get_succes_url())
 
-class RecetaDelete(DeleteView):
+class PedidoDelete(DeleteView):
     model = Pedido
     template_name = 'tipo/tipo_delete.html'
     success_url = reverse_lazy('tipo_listar')

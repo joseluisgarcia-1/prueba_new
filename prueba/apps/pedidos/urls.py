@@ -1,7 +1,7 @@
 from django.urls import path, include
 from django.contrib.auth.decorators import login_required
 
-from apps.recetas.views import index, pedidos_view, pedidos_list, pedidos_edit, pedidos_delete,\
+from apps.pedidos.views import index, pedidos_view, pedidos_list, pedidos_edit, pedidos_delete,\
     PedidosList, PedidosCreate, PedidosUpdate, PedidosDelete
 
 urlpatterns = [

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from apps.recetas.forms import PedidosForm
-from apps.recetas.models import Pedidos
+from apps.pedidos.forms import PedidosForm
+from apps.pedidos.models import Pedidos
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 

@@ -1,5 +1,5 @@
 from django import forms
-from apps.recetas.models import Pedidos
+from apps.pedidos.models import Pedidos
 
 class PedidosForm(forms.ModelForm):
 

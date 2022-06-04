@@ -20,7 +20,7 @@ from django.urls import reverse_lazy
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('recetas/', include('apps.recetas.urls')),
+    path('pedidos/', include('apps.pedidos.urls')),
     path('tipo/', include('apps.tipo.urls')),
     path('usuario/', include('apps.usuario.urls')),
     path('logout/', logout_then_login, name='logout'),

@@ -19,28 +19,28 @@
     </thead>
     <tbody>
         {% if object_list %}
-        {% for recetas in object_list %}
+        {% for pedidos in object_list %}
         <tr>
-            <td>{{ recetas.id }}</td>
-            <td>{{ recetas.fechauno }}</td>
-            <td>{{ recetas.objetivo }}</td>
-            <td>{{ recetas.tienda }}</td>
-            <td>{{ recetas.departamento }}</td>
-            <td>{{ recetas.vendedor }}</td>
-            <td>{{ recetas.producto }}</td>
-            <td>{{ recetas.valor }}</td>
-            <td>{{ recetas.fechados }}</td>
+            <td>{{ pedidos.id }}</td>
+            <td>{{ pedidos.fechauno }}</td>
+            <td>{{ pedidos.objetivo }}</td>
+            <td>{{ pedidos.tienda }}</td>
+            <td>{{ pedidos.departamento }}</td>
+            <td>{{ pedidos.vendedor }}</td>
+            <td>{{ pedidos.producto }}</td>
+            <td>{{ pedidos.valor }}</td>
+            <td>{{ pedidos.fechados }}</td>
             <td>
-                <a class="btn btn-primary" href="{% url 'pedidos_editar' recetas.id %}">Editar</a>
-                <a class="btn btn-danger" href="{% url 'pedidos_eliminar' recetas.id %}">Eliminar</a>
-                <a class="btn btn-success" target="_blank" href="{% url 'pedidos_eliminar' recetas.id %}">Ver</a>
+                <a class="btn btn-primary" href="{% url 'pedidos_editar' pedidos.id %}">Editar</a>
+                <a class="btn btn-danger" href="{% url 'pedidos_eliminar' pedidos.id %}">Eliminar</a>
+                <a class="btn btn-success" target="_blank" href="{% url 'pedidos_eliminar' pedidos.id %}">Ver</a>
 
             </td>
         </tr>
         {% endfor %}
 
         {% else %}
-        <h1>No hay registros de recetas</h1>
+        <h1>No hay registros de pedidos</h1>
 
         {% endif %}
     </tbody>
