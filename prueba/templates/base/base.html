@@ -23,7 +23,7 @@
                         <nav class="navbar navbar-default">
                             <div class="container-fluid">
                                 <div class="navbar-header">
-                                    <a class="navbar-brand" href="#">Home</a>
+                                    <a class="navbar-brand" href="{% url 'pedidos_listar' %}">Home</a>
                                 </div>
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav">
@@ -32,7 +32,7 @@
                                            aria-expanded="false">Pedidos<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href ="{% url 'pedidos_crear' %}">Registrar pedido</a></li>
-                                            <li><a href ="{% url 'pedidos_listar' %}">Listar pedido</a></li>
+                                            <li><a href ="{% url 'pedidos_listar' %}">Ver pedidos</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown">
@@ -40,7 +40,7 @@
                                            aria-expanded="false">Objetivos<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href ="{% url 'tipo_crear' %}">Registrar Objetivo</a></li>
-                                            <li><a href ="{% url 'tipo_listar' %}">Listar Objetivos</a></li>
+                                            <li><a href ="{% url 'tipo_listar' %}">Ver Objetivos</a></li>
                                         </ul>
                                     </li>
                                 </ul>
