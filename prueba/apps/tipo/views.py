@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
-from apps.tipo.models import Descripcion, Receta
-from apps.tipo.forms import DescripcionForm, RecetaForm
+from apps.tipo.models import Objetivos, Receta
+from apps.tipo.forms import ObjetivosForm, RecetaForm
 
 
 def index_tipo(request):
@@ -18,7 +18,7 @@ class RecetaCreate(CreateView):
     model = Receta
     template_name = 'tipo/tipo_form.html'
     form_class = RecetaForm
-    second_form_class = DescripcionForm
+    second_form_class = ObjetivosForm
     success_url = reverse_lazy('tipo_listar')
 
     def get_context_data(self, **kwargs):
@@ -43,10 +43,10 @@ class RecetaCreate(CreateView):
 
 class RecetaUpdate(UpdateView):
     model = Receta
-    second_model = Descripcion
+    second_model = Objetivos
     template_name = 'tipo/tipo_form.html'
     form_class = RecetaForm
-    second_form_class = DescripcionForm
+    second_form_class = ObjetivosForm
     success_url = reverse_lazy('tipo_listar')
 
     def get_context_data(self, **kwargs):

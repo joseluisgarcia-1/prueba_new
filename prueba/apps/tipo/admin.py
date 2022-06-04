@@ -1,4 +1,4 @@
 from django.contrib import admin
-from apps.tipo.models import Descripcion
+from apps.tipo.models import Objetivos
 
-admin.site.register(Descripcion)
+admin.site.register(Objetivos)

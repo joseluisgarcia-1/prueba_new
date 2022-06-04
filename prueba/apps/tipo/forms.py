@@ -1,16 +1,16 @@
 from django import forms
-from apps.tipo.models import Descripcion, Receta
+from apps.tipo.models import Objetivos, Receta
 
-class DescripcionForm(forms.ModelForm):
+class ObjetivosForm(forms.ModelForm):
 
     class Meta:
-        model = Descripcion
+        model = Objetivos
         fields = [
             'nombre',
 
         ]
         labels = {
-            'nombre': 'Vendedor',
+            'nombre': 'Objetivos',
         }
         widgets = {
         }
