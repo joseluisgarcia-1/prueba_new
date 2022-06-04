@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+	Receta
+{% endblock %}
+
+{% block content %}
+	<h1> {{ recetas.receta }} </h1>
+	{% if producto.imagen %}
+		<img src="/media/{{ producto.imagen }}" width ="80px" heigth="80px">
+	{% endif %}	
+	<br>
+	<p><b>Nombre:</b> {{ recetas.receta }} </p>
+	<p><b>Tipo de receta:</b> {{ recetas.tipo.nombre }} </p>
+	<p><b>Pasos para preparar la receta:</b> {{ producto.precio }} </p>
+	<p><b>Ingredientes:</b> {{ producto.precio }} </p>
+	<p><b>Descripción:</b> {{ producto.stock }} unidades</p>
+	{% for c in categorias %}
+		<span class="label label-info">{{ c.nombre }}</span>
+	{% endfor %}	
+
+{% endblock %}

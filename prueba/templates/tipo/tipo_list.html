@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Numero de vendedor</td>
+            <td>Nombre de vendedor</td>
+            <td>Acciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% if object_list %}
+        {% for plato in object_list %}
+        <tr>
+            <td>{{ plato.id }}</td>
+            <td>{{ plato.descripcion.nombre }}</td>
+
+            <td>
+                <a class="btn btn-primary" href="#">Editar</a>
+                <a class="btn btn-danger" href="#">Eliminar</a>
+                <a class="btn btn-success" href="#">Ver</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <h1>No hay registros de Tipos de recetas</h1>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}
