@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
-from apps.tipo.models import Objetivos, Receta
-from apps.tipo.forms import ObjetivosForm, RecetaForm
+from apps.tipo.models import Objetivos, Pedido
+from apps.tipo.forms import ObjetivosForm, PedidoForm
 
 
 def index_tipo(request):
@@ -11,13 +11,13 @@ def index_tipo(request):
 
 
 class RecetaList(ListView):
-    model = Receta
+    model = Pedido
     template_name = 'tipo/tipo_list.html'
 
 class RecetaCreate(CreateView):
-    model = Receta
+    model = Pedido
     template_name = 'tipo/tipo_form.html'
-    form_class = RecetaForm
+    form_class = PedidoForm
     second_form_class = ObjetivosForm
     success_url = reverse_lazy('tipo_listar')
 
@@ -42,10 +42,10 @@ class RecetaCreate(CreateView):
             return self.render_to_response(self.get_context_data(form=form, form2=form2))
 
 class RecetaUpdate(UpdateView):
-    model = Receta
+    model = Pedido
     second_model = Objetivos
     template_name = 'tipo/tipo_form.html'
-    form_class = RecetaForm
+    form_class = PedidoForm
     second_form_class = ObjetivosForm
     success_url = reverse_lazy('tipo_listar')
 
@@ -76,7 +76,7 @@ class RecetaUpdate(UpdateView):
             return HttpResponseRedirect(self.get_succes_url())
 
 class RecetaDelete(DeleteView):
-    model = Receta
+    model = Pedido
     template_name = 'tipo/tipo_delete.html'
     success_url = reverse_lazy('tipo_listar')
 

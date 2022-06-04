@@ -3,7 +3,7 @@
 {% block content %}
 <form method="post">
     {% csrf_token %}
-    <h3>¿Está seguro de eliminar la receta de, {{ recetas.receta }}?</h3>
+    <h3>¿Está seguro de eliminar el pedido del vendedor {{ pedidos.vendedor }}?</h3>
     <button class="btn btn-danger" type="submit"> Si, eliminar</button>
     <a class="btn btn-default" href="{% url 'recetas_listar' %}">Cancelar</a>
 </form>

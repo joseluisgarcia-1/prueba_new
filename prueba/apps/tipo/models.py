@@ -6,7 +6,5 @@ class Objetivos(models.Model):
     def __str__(self):
         return '{}'.format(self.nombre)
 
-class Receta(models.Model):
+class Pedido(models.Model):
     descripcion = models.ForeignKey(Objetivos, null=True, blank=True, on_delete=models.CASCADE)
-
-

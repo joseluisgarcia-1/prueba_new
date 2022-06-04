@@ -1,5 +1,5 @@
 from django import forms
-from apps.tipo.models import Objetivos, Receta
+from apps.tipo.models import Objetivos, Pedido
 
 class ObjetivosForm(forms.ModelForm):
 
@@ -15,9 +15,9 @@ class ObjetivosForm(forms.ModelForm):
         widgets = {
         }
 
-class RecetaForm(forms.ModelForm):
+class PedidoForm(forms.ModelForm):
 
     class Meta:
-        model = Receta
+        model = Pedido
         fields = [
         ]
