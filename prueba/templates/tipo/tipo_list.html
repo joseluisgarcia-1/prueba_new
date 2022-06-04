@@ -12,14 +12,14 @@
     </thead>
     <tbody>
         {% if object_list %}
-        {% for plato in object_list %}
+        {% for objetivo in object_list %}
         <tr>
-            <td>{{ plato.id }}</td>
-            <td>{{ plato.descripcion.nombre }}</td>
+            <td>{{ objetivo.id }}</td>
+            <td>{{ objetivo.descripcion.nombre }}</td>
 
             <td>
                 <a class="btn btn-primary" href="#">Editar</a>
-                <a class="btn btn-danger" href="#">Eliminar</a>
+                <a class="btn btn-danger" href="{% url 'tipo_eliminar' objetivo.id %}">Eliminar</a>
                 <a class="btn btn-success" href="#">Ver</a>
             </td>
         </tr>
